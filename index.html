@@ -170,48 +170,6 @@
 
 					</div>
 				</div>
-
-<!--
-				<h1 class="title">Ilustrações</h1>
-				<div id="art" class="row">
-					<a class="left" @click="scrollSubj('left', 'art')">&#10094;</a>
-					<div id="items">
-						<div class="column hover-shadow" v-for="(item, index) in subj.art">
-							<img :src="item" @click="showSlides(index), subjSelected=subj.art">
-						</div>
-					</div>
-					<a class="right" @click="scrollSubj('right', 'art')">&#10095;</a>
-				</div>
-
-				<h1 class="title">Pinturas</h1>
-				<div id="bleh" class="row">
-					<a class="left" @click="scrollSubj('left', 'bleh')">&#10094;</a>
-					<div id="items">
-						<div class="column hover-shadow" v-for="(item, index) in subj.bleh">
-							<img :src="item" @click="showSlides(index), subjSelected=subj.bleh">
-						</div>
-					</div>
-					<a class="right" @click="scrollSubj('right', 'bleh')">&#10095;</a>
-				</div>
-
-				<div id="myModal" class="modal" v-if="show==true">
-					<span class="close" @click="show = !show">&times;</span>
-					<div class="modal-content">
-
-						<div class="mySlides">
-							<div class="numbertext">{{ slideIndex+1 }} / {{ subjSelected.length }}</div>
-							<img :src="subjSelected[slideIndex]">
-						</div>
-
-						<a class="prev" @click="slideIndex--, switchSlides()">&#10094;</a>
-						<a class="next" @click="slideIndex++, switchSlides()">&#10095;</a>
-
-						<div class="caption-container">
-							<p id="caption"></p>
-						</div>
-
-					</div>
-				</div>-->
 			</div>
 		</div>
 	</div>
