@@ -170,48 +170,6 @@
 
 					</div>
 				</div>
-
-<!--
-				<h1 class="title">Ilustrações</h1>
-				<div id="art" class="row">
-					<a class="left" @click="scrollSubj('left', 'art')">&#10094;</a>
-					<div id="items">
-						<div class="column hover-shadow" v-for="(item, index) in subj.art">
-							<img :src="item" @click="showSlides(index), subjSelected=subj.art">
-						</div>
-					</div>
-					<a class="right" @click="scrollSubj('right', 'art')">&#10095;</a>
-				</div>
-
-				<h1 class="title">Pinturas</h1>
-				<div id="bleh" class="row">
-					<a class="left" @click="scrollSubj('left', 'bleh')">&#10094;</a>
-					<div id="items">
-						<div class="column hover-shadow" v-for="(item, index) in subj.bleh">
-							<img :src="item" @click="showSlides(index), subjSelected=subj.bleh">
-						</div>
-					</div>
-					<a class="right" @click="scrollSubj('right', 'bleh')">&#10095;</a>
-				</div>
-
-				<div id="myModal" class="modal" v-if="show==true">
-					<span class="close" @click="show = !show">&times;</span>
-					<div class="modal-content">
-
-						<div class="mySlides">
-							<div class="numbertext">{{ slideIndex+1 }} / {{ subjSelected.length }}</div>
-							<img :src="subjSelected[slideIndex]">
-						</div>
-
-						<a class="prev" @click="slideIndex--, switchSlides()">&#10094;</a>
-						<a class="next" @click="slideIndex++, switchSlides()">&#10095;</a>
-
-						<div class="caption-container">
-							<p id="caption"></p>
-						</div>
-
-					</div>
-				</div>-->
 			</div>
 		</div>
 	</div>
@@ -280,7 +238,7 @@
 					var pg3 = document.getElementById('pg3');
 
 					var height = document.getElementById('intro').offsetHeight;
-					console.log(height);
+
 
 					if (page == 'intro') {
 						pg1.classList.add("active");
@@ -300,28 +258,23 @@
 						pg3.classList.add("active");
 						var scrollDiv = document.getElementById(page).offsetTop;
 					}
-					//console.log(scrollDiv);
+					
 					document.getElementById('profile').scrollTo({ top: scrollDiv, behavior: 'smooth' });
 				},
 				scrollSubj(direction, id) {
 					if (direction == 'right') {
-						console.log(id)
 						document.getElementById(id).scrollBy({ left: 300, behavior: 'smooth' });
 					}
 					if (direction == 'left') {
-						console.log(id)
 						document.getElementById(id).scrollBy({ left: -300, behavior: 'smooth' });
 					}
 				},
-				switchSlides() {
-					console.log(this.slideIndex);
+				switchSlides() {				
 					if (this.slideIndex > this.subjSelected.files.length - 1) { this.slideIndex = 0 }
 					if (this.slideIndex < 0) { this.slideIndex = this.subjSelected.files.length - 1 }
 				},
-				showSlides(n, i) {
-					console.log(i);
+				showSlides(n, i) {				
 					this.subjSelected = i;
-					console.log(this.subjSelected);
 					this.slideIndex = n;
 					this.show = true;
 				}
