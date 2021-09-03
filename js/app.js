@@ -82,12 +82,28 @@ var app = new Vue({
             document.getElementById('profile').scrollTo({ top: scrollDiv, behavior: 'smooth' });
         },
         scrollSubj(direction, id) {
+            var scrollPos = document.getElementById(id).scrollLeft;
+            var id = document.getElementById(id);
+       
             if (direction == 'right') {
-                document.getElementById(id).scrollBy({ left: 300, behavior: 'smooth' });
+                id.scrollBy({ left: 400, behavior: 'smooth' });
+                scrollPos+=400;
             }
             if (direction == 'left') {
-                document.getElementById(id).scrollBy({ left: -300, behavior: 'smooth' });
+                id.scrollBy({ left: -400, behavior: 'smooth' });
+                scrollPos-=400;
             }
+            
+            console.log(id.scrollWidth);
+            if (scrollPos > 0)          
+                id.getElementsByClassName('left')[0].style.visibility = "visible";
+            else
+                id.getElementsByClassName('left')[0].style.visibility = "hidden";
+
+            if(scrollPos >= id.scrollWidth-800)
+                id.getElementsByClassName('right')[0].style.visibility = "hidden";
+            else
+                id.getElementsByClassName('right')[0].style.visibility = "visible";
         },
         switchSlides() {				
             if (this.slideIndex > this.subjSelected.files.length - 1) { this.slideIndex = 0 }

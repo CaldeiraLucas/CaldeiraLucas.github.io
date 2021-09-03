@@ -326,6 +326,10 @@ body.fade-out {
 	z-index: 100;
 }
 
+.left {
+	visibility: hidden;
+}
+
 .right {
 	right: 0;
 	border-radius: 3px 0 0 3px;
