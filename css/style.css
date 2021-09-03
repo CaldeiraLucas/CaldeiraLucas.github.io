@@ -234,6 +234,7 @@ body.fade-out {
 	}
 
 	.nav2 {
+		display: none;
 		right: 10px;
 	}
 
@@ -243,6 +244,7 @@ body.fade-out {
 
 	#profile {
 		height: 80vh;
+		overflow-y: scroll;
 	}
 
 	.nav-link {
@@ -251,7 +253,8 @@ body.fade-out {
 	}
 
 	#intro, #exp, #hab {
-		height: 90vh;
+		height: unset;
+    	margin-bottom: 25%;
 	}
 
 	.title {
