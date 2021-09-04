@@ -279,6 +279,52 @@ body.fade-out {
 	}
 }
 
+@media (min-width: 501px) and (max-width: 812px) and (orientation: landscape) {
+	.logo img{
+		width: 250px;
+	}
+
+	.nav {
+		margin: 10px auto 20px auto;
+	}
+
+	.nav2 {
+		display: none;
+		right: 10px;
+	}
+
+	#profile {
+		height: 75vh;
+		overflow-y: scroll;
+	}
+
+	.nav-link {
+		font-size: 16px;
+		padding: 10px 40px;
+	}
+
+	#intro, #exp, #hab {
+		height: unset;
+    	margin-bottom: 10%;
+	}
+
+	.title {
+		font-size: 21px;
+	}
+
+	#intro .grid {
+		gap: 30px;
+	}
+
+	#exp section {
+		margin-bottom: 100px;
+	}
+
+	#gallery {
+		height: 65vh;
+	}
+}
+
 /* ----------- LIGHTBOX ----------- */
 
 .subj {
