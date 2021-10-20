@@ -35,7 +35,7 @@
 			</ul>
 
 			<div id="profile" v-if="content === 'profile'">
-				<article id="intro">
+				<article id="intro" @wheel="handleWheel('intro')">
 					<h1 class="title">Quem sou</h1>
 					<div class="grid">
 						<div class="pf_image"><img src="img/4833582.jpg" /></div>
@@ -70,7 +70,7 @@
 						<!--<a href="#" target="_blank"><img src="img/instagram.png" /></a>-->
 					</div>
 				</article>
-				<article id="exp">
+				<article id="exp" @wheel="handleWheel('exp')">
 					<section>
 						<h1 class="title">Cursos</h1>
 						<ul>
@@ -94,7 +94,7 @@
 						</ul>
 					</section>
 				</article>
-				<article id="hab">
+				<article id="hab" @wheel="handleWheel('hab')">
 					<h1 class="title">Conhecimentos</h1>
 					<div class="dev_web">
 						<h2>Desenvolvimento Web</h2>
