@@ -52,6 +52,61 @@ var app = new Vue({
                 item2.classList.add('active');
             }
         },
+        handleWheel(page) {
+            console.log(page);
+            var pg1 = document.getElementById('pg1');
+            var pg2 = document.getElementById('pg2');
+            var pg3 = document.getElementById('pg3');
+
+            var height = document.getElementById('intro').offsetHeight;
+
+            window.addEventListener('wheel', function(event) {
+                console.log(event.deltaY);
+                if (event.deltaY < 0) {
+                    console.log("scrolling up")
+                    if (page == 'intro') {
+                        pg1.classList.remove("active");
+                        pg2.classList.remove("active");
+                        pg3.classList.add("active");
+                        var scrollDiv = document.getElementById('hab').offsetTop;
+                    }
+                    if (page == 'exp') {
+                        pg1.classList.add("active");
+                        pg2.classList.remove("active");
+                        pg3.classList.remove("active");
+                        var scrollDiv = 0;
+                    }
+                    else if (page == 'hab') {
+                        pg1.classList.remove("active");
+                        pg2.classList.add("active");
+                        pg3.classList.remove("active");
+                        var scrollDiv = height;
+                    }
+                } else if (event.deltaY > 0) {
+                    console.log("scrolling down")
+                    if (page == 'intro') {
+                        pg1.classList.remove("active");
+                        pg2.classList.add("active");
+                        pg3.classList.remove("active");
+                        var scrollDiv = height;
+                    }
+                    else if (page == 'exp') {
+                        pg1.classList.remove("active");
+                        pg2.classList.remove("active");
+                        pg3.classList.add("active");
+                        var scrollDiv = document.getElementById('hab').offsetTop;
+                    }
+                    else if (page == 'hab'){
+                        pg1.classList.add("active");
+                        pg2.classList.remove("active");
+                        pg3.classList.remove("active");
+                        var scrollDiv = 0;
+                    }
+                }
+
+                document.getElementById('profile').scrollTo({ top: scrollDiv, behavior: 'smooth' });
+             })
+        },
         scrollWin(page) {
             var pg1 = document.getElementById('pg1');
             var pg2 = document.getElementById('pg2');
