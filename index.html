@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
 		integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link href="css/style.css" rel="stylesheet" media="screen">
-	<link rel="stylesheet" href="../dist/css/animsition.min.css">
 </head>
 
 <body>
@@ -20,96 +19,63 @@
 			<div id="pg2" class="dot" @click="scrollWin('exp')"></div>
 			<div id="pg3" class="dot" @click="scrollWin('hab')"></div>
 		</div>
+	
 		<div class="container">
 			<div class="logo">
-				<img src="img/logo.png" />
+				<img src="img/Ativo 5.png" />
 			</div>
 			<ul class="nav">
 				<li class="nav-item">
-					<a id="item1" class="nav-link active" @click="changeContent('profile')">Perfil</a>
+					<a id="item1" class="nav-link active" @click="changeContent('profile')">{{translate.menu[0]}}</a>
 				</li>
 				<li class="nav-item">
-					<a id="item2" class="nav-link" @click="changeContent('gallery')">Galeria</a>
+					<a id="item2" class="nav-link" @click="changeContent('gallery')">{{translate.menu[1]}}</a>
 				</li>
 				</li>
 			</ul>
 
 			<div id="profile" v-if="content === 'profile'">
 				<article id="intro" @wheel="handleWheel('intro')">
-					<h1 class="title">Quem sou</h1>
+					<h1 class="title">{{translate.titles[0]}}</h1>
 					<div class="grid">
 						<div class="pf_image"><img src="img/4833582.jpg" /></div>
-						<div class="text">
-							<p>
-								Bacharel em Desenho Industrial com Habilitação em Design de Mídias Digitais pela PUC-Rio
-								(2014-2019). Sou observador e racional, mas também empático e criativo. Busco ser útil o
-								máximo
-								possível para a equipe.
-							</p>
-							<p>
-								Interessado em oportunidades em web design, design gráfico ou game design. Realizo
-								projetos
-								pessoais
-								em ilustração, enquanto me aperfeiçoo em arte digital, programação front-end e
-								editoração
-								eletrônica.
-							</p>
-							<p>
-								Nas horas vagas, assisto videos no Youtube e séries na Netflix, jogo
-								casualmente e aprecio animações ocidentais e orientais.
-							</p>
-						</div>
+						<div class="text" v-html="translate.intro"></div>
 					</div>
 					<div class="medias">
-						<h6>Minhas redes</h6>
 						<a href="https://www.behance.net/LucasCaldeira" target="_blank"><img
 								src="img/behance.jpeg" width="50px"/></a>
 						<a href="https://www.deviantart.com/lucascaldeira" target="_blank"><img
 								src="img/deviantart.png" /></a>
 						<a href="https://www.pixiv.net/en/users/5951600" target="_blank"><img src="img/pixiv.png" /></a>
 						<a href="https://github.com/CaldeiraLucas" target="_blank"><img src="img/GitHub-Mark-Light-64px.png" width="50px"/></a>
-						<!--<a href="#" target="_blank"><img src="img/instagram.png" /></a>-->
-						<!--<a href="#" target="_blank"><img src="img/instagram.png" /></a>-->
+						<a href="https://www.linkedin.com/in/lucas-caldeira-de-macedo-aaba08134/" target="_blank"><img src="img/In-White-48.png" width="50px"/></a>
+						<!--<a href="#" target="_blank"><img src="img/instagram.png" /></a>-->					
 					</div>
 				</article>
 				<article id="exp" @wheel="handleWheel('exp')">
 					<section>
-						<h1 class="title">Cursos</h1>
-						<ul>
-							<li>Design Gráfico e WEB (Seven/2014)</li>
-							<li>Português e Inglês (Kumon/2013, 2019)</li>
-							<li>“Introdução à linguagem Python” (Udemy/2019)</li>
-							<li>“Introdução à linguagem Javascript” (Udemy/2019)</li>
-						</ul>
+						<h1 class="title">{{translate.titles[1]}}</h1>
+						<ul v-html="translate.courses"></ul>
 					</section>
 					<section>
-						<h1 class="title">Experiências</h1>
-						<ul>
-							<li>Monitorias PUC-Rio
-								<ul>
-									<li>Modelagem virtual (2016.2 - 2017.1)</li>
-									<li>Edição e tratamento de imagem (2018.1)</li>
-								</ul>
-							</li>
-							<li>Editor na Noveland (2018 - 2020)</li>
-							<li>UI Designer/Front End Dev Jr na Voodfy (2020 - )</li>
-						</ul>
+						<h1 class="title">{{translate.titles[2]}}</h1>
+						<ul v-html="translate.exp"></ul>
 					</section>
 				</article>
 				<article id="hab" @wheel="handleWheel('hab')">
-					<h1 class="title">Conhecimentos</h1>
+					<h1 class="title">{{translate.titles[3]}}</h1>
 					<div class="dev_web">
-						<h2>Desenvolvimento Web</h2>
+						<h2>{{translate.know.items[0]}}</h2>
 						<ul>
-							<li>HTML/CSS/Javasciprt</li>
+							<li>HTML/CSS/Javascript</li>
 							<li>Bootstrap</li>
 							<li>Wordpress</li>
 							<li>Vue.js</li>
-							<li>Figma</li>
+							<li>Git/Github</li>
 						</ul>
 					</div>
 					<div class="edit">
-						<h2>Edição e Criação</h2>
+						<h2>{{translate.know.items[1]}}</h2>
 						<ul>
 							<li>Photoshop</li>
 							<li>After Effects</li>
@@ -117,24 +83,19 @@
 							<li>InDesign</li>
 							<li>Illustrator</li>
 							<li>Paint Tool SAI</li>
+							<li>3D Studio Max</li>
 						</ul>
 					</div>
 					<div class="lang">
-						<h2>Idiomas</h2>
-						<ul>
-							<li>Inglês</li>
-							<li>Espanhol</li>
+						<h2>{{translate.know.items[2]}}</h2>
+						<ul v-html="translate.know.subitems">
+
 						</ul>
 					</div>
 					<div class="others">
-						<div class="pill">Ilustração</div>
-						<div class="pill">User Interface</div>
+						<div class="pill">Figma</div>
 						<div class="pill">GameMaker Studio</div>
-						<div class="pill">Editoração</div>
-						<div class="pill">Programação</div>
-						<div class="pill">Pacote Office</div>
-						<div class="pill">Modelagem 3D</div>
-						<div class="pill">Git</div>
+						<div class="pill">Microsoft Office</div>
 					</div>
 				</article>
 			</div>
@@ -142,7 +103,7 @@
 			<div id="gallery" v-if="content === 'gallery'">
 
 				<div class="subj" v-for="(item, name) in subj">
-					<h1 class="title">{{ item.title }}</h1>
+					<h1 class="title" v-for="(item, key) in item.title" v-if="lang === key">{{ item }}</h1>
 					<div :id="name" class="row">
 						<a class="left" @click="scrollSubj('left', name)">&#10094;</a>
 						<div id="items">

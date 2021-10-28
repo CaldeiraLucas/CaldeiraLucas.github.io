@@ -5,7 +5,7 @@ body {
     transition: 1s opacity;
 	overflow-y: hidden;
 	scroll-behavior: smooth;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 body.fade-out {
@@ -23,7 +23,7 @@ body.fade-out {
 }
 
 .logo img{
-	width: 350px;
+	width: 400px;
 }
 
 .nav {
