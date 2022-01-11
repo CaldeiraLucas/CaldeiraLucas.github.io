@@ -19,21 +19,24 @@ var app = new Vue({
                 ],
                 intro: `
                     <p>
-                    Bachelor in Industrial Design with Qualification in Digital Media Design at PUC-Rio (2014-2019). 
+                    Bachelor in Industrial Design with Qualification in Digital Media Design at PUC-Rio (2014-2019)
                     </p>
                     <p>
-                    Observant and rational, but also empathetic and creative. I try to be as helpful as possible to the team.
-                    Constantly improving in the areas of digital art, front-end development, user interface and digital publishing.
+                    Although he doesn't talk much, he likes to listen to people.
+                    Rational, empathetic and hardworking, try to be as helpful as possible for the team.
+                    Looking for more knowledge in web development (front-end) and illustration.
                     </p>
                     <p>
-                    In my spare time, I listen music, play sports, watch Youtube or Netflix, and casually play video-games.
+                    In spare time, listen music, play sports, watch Youtube or Netflix, and casually play video-games.
                     </p>
                 `,
                 courses: `
                     <li>Graphic Design and Web Design (Seven/2014)</li>
-                    <li>Portuguese and English (Kumon/2013, 2019)</li>
-                    <li>"Introduction to the Python language” (Udemy/2019)</li>
-                    <li>"Introduction to the Javascript language” (Udemy/2019)</li>
+                    <li>English (Kumon/2019)</li>
+                    <li>"Introduction to the Python language" (Udemy/2019)</li>
+                    <li>"Introduction to the Javascript language" (Udemy/2019)</li>
+                    <li>"Vuejs - First Steps" (Udemy)</li>
+                    <li>"Git e Github for beginners" (Udemy)</li>
                 `,
                 exp: `
                     <li>Tutorships PUC-Rio
@@ -42,13 +45,15 @@ var app = new Vue({
                         <li>Editing and image processing (2018.1)</li>
                     </ul>
                     </li>
+                    <li>Translator and editor at VNX+</li>
                     <li>Editor at Noveland (2018 - 2020)</li>
-                    <li>UI Designer/Front End Dev Jr at Voodfy (2020 - )</li>
+                    <li>UI Designer/Front End Dev Jr at Voodfy (2020 - 2021)</li>
+                    <li>Cover editor at Kiniga (2021)</li>
                 `,
                 know: {
                     items: [
                         'Web Development',
-                        'Creation and Editing',
+                        'Design, Arts and Editing',
                         'Languages'
                     ],
                     subitems: `
@@ -73,18 +78,21 @@ var app = new Vue({
                     Bacharel em Desenho Industrial com Habilitação em Design de Mídias Digitais pela PUC-Rio (2014-2019). 
                     </p>
                     <p>
-                    Observador e racional, mas também empático e criativo. Busco ser útil o	máximo possível para a equipe.
-                    Em eterno aperfeiçamento nas áreas de arte digital, desenvolvimento front-end, user interface e editoração eletrônica.
+                    Embora seja de falar pouco, gosta de ouvir as pessoas.
+                    Racional, empático e esforçado, tenta ser útil o quanto possível para a equipe. 
+                    Em busca de mais conhecimentos em desenvolvimento web (front-end) e ilustração.
                     </p>
                     <p>
-                    Nas horas vagas, ouço música, pratico esportes, assisto Youtube ou Netflix, e jogo casualmente.
+                    Nas horas vagas, ouve música, pratica esportes, assiste Youtube ou Netflix, e joga casualmente.
                     </p>
                 `,
                 courses: `
                     <li>Design Gráfico e Web Design (Seven/2014)</li>
-                    <li>Português e Inglês (Kumon/2013, 2019)</li>
-                    <li>“Introdução à linguagem Python” (Udemy/2019)</li>
-                    <li>“Introdução à linguagem Javascript” (Udemy/2019)</li>
+                    <li>Inglês (Kumon/2019)</li>
+                    <li>Introdução à linguagem Python (Udemy/2019)</li>
+                    <li>Introdução à linguagem Javascript (Udemy/2019)</li>
+                    <li>Vuejs - Primeiros Passos (Udemy)</li>
+                    <li>Git e Github para iniciantes (Udemy)</li>
                 `,
                 exp: `
                     <li>Monitorias PUC-Rio
@@ -93,13 +101,15 @@ var app = new Vue({
                         <li>Edição e tratamento de imagem (2018.1)</li>
                     </ul>
                     </li>
+                    <li>Tradutor e editor na VNX+</li>
                     <li>Editor na Noveland (2018 - 2020)</li>
-                    <li>UI Designer/Front End Dev Jr na Voodfy (2020 - )</li>
+                    <li>UI Designer/Front End Dev Jr na Voodfy (2020 - 2021)</li>
+                    <li>Capista na Kiniga (2021 - )</li>
                 `,
                 know: {
                     items: [
                         'Desenvolvimento Web',
-                        'Criação e Edição',
+                        'Design, Artes e Edição',
                         'Idiomas'
                     ],
                     subitems: `
