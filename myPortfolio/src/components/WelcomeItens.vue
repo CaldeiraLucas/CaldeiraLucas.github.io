@@ -1,0 +1,94 @@
+<script setup lang="ts">
+import WelcomeItem from "./WelcomeItem.vue";
+import DocumentationIcon from "./icons/IconDocumentation.vue";
+import ToolingIcon from "./icons/IconTooling.vue";
+import EcosystemIcon from "./icons/IconEcosystem.vue";
+import CommunityIcon from "./icons/IconCommunity.vue";
+import SupportIcon from "./icons/IconSupport.vue";
+</script>
+
+<template>
+  <div style="padding-top: 30px; overflow-y: hidden">
+    <WelcomeItem>
+      <template #heading>Quem sou</template>
+      <p>
+        Bacharel em Desenho Industrial com Habilitação em Design de Mídias
+        Digitais pela PUC-Rio (2014-2019).
+      </p>
+      <p>
+        Embora seja de falar pouco, gosta de ouvir as pessoas. Racional,
+        empático e esforçado, tenta ser útil o quanto possível para a equipe. Em
+        busca de mais conhecimentos em desenvolvimento web (front-end) e
+        ilustração.
+      </p>
+      <p>
+        Nas horas vagas, ouve música, pratica esportes, assiste Youtube ou
+        Netflix, e joga casualmente.
+      </p>
+    </WelcomeItem>
+
+    <WelcomeItem>
+      <template #icon>
+        <ToolingIcon />
+      </template>
+      <template #heading>Cursos</template>
+
+      This project is served and bundled with
+      <a href="https://vitejs.dev/guide/features.html" target="_blank">Vite</a>.
+      The recommended IDE setup is
+      <a href="https://code.visualstudio.com/" target="_blank">VSCode</a> +
+      <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a
+      >. If you need to test your components and web pages, check out
+      <a href="https://www.cypress.io/" target="_blank">Cypress</a> and
+      <a
+        href="https://docs.cypress.io/guides/component-testing/introduction"
+        target="_blank"
+        >Cypress Component Testing</a
+      >.
+
+      <br />
+
+      More instructions are available in <code>README.md</code>.
+    </WelcomeItem>
+
+    <WelcomeItem>
+      <template #icon>
+        <EcosystemIcon />
+      </template>
+      <template #heading>Experiências profissionais</template>
+
+      Get official tools and libraries for your project:
+      <a target="_blank" href="https://pinia.vuejs.org/">Pinia</a>,
+      <a target="_blank" href="https://router.vuejs.org/">Vue Router</a>,
+      <a target="_blank" href="https://test-utils.vuejs.org/">Vue Test Utils</a
+      >, and
+      <a target="_blank" href="https://github.com/vuejs/devtools"
+        >Vue Dev Tools</a
+      >. If you need more resources, we suggest paying
+      <a target="_blank" href="https://github.com/vuejs/awesome-vue"
+        >Awesome Vue</a
+      >
+      a visit.
+    </WelcomeItem>
+
+    <WelcomeItem>
+      <template #icon>
+        <CommunityIcon />
+      </template>
+      <template #heading>Conhecimentos</template>
+
+      Got stuck? Ask your question on
+      <a target="_blank" href="https://chat.vuejs.org">Vue Land</a>, our
+      official Discord server, or
+      <a
+        target="_blank"
+        href="https://stackoverflow.com/questions/tagged/vue.js"
+        >StackOverflow</a
+      >. You should also subscribe to
+      <a target="_blank" href="https://news.vuejs.org">our mailing list</a> and
+      follow the official
+      <a target="_blank" href="https://twitter.com/vuejs">@vuejs</a>
+      twitter account for latest news in the Vue world.
+    </WelcomeItem>
+  </div>
+</template>
