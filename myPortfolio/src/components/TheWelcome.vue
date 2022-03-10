@@ -5,16 +5,13 @@ import ScrollSpy from "./ScrollSpy.vue";
 import DocumentationIcon from "./icons/IconDocumentation.vue";
 import ProfileIcon from "./icons/IconProfile.vue";
 import StudiesIcon from "./icons/IconStudies.vue";
-import ToolingIcon from "./icons/IconTooling.vue";
-import EcosystemIcon from "./icons/IconEcosystem.vue";
-import CommunityIcon from "./icons/IconCommunity.vue";
-import SupportIcon from "./icons/IconSupport.vue";
+
 </script>
 
 <template>
   <ScrollSpy>
     <template #icon1>
-      <ProfileIcon />
+      <ProfileIcon/>
     </template>
     <template #icon2>
       <StudiesIcon />
@@ -26,3 +23,4 @@ import SupportIcon from "./icons/IconSupport.vue";
   <WelcomeItens>
   </WelcomeItens>
 </template>
+
