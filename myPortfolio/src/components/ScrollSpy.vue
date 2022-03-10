@@ -4,7 +4,7 @@ import DocumentationIcon from "./icons/IconDocumentation.vue";
 
 <template>
   <div class="icons">
-      <i>
+      <i className="active">
     <slot name="icon1"></slot>
     </i>
     <i>
@@ -53,10 +53,16 @@ h3 {
     left: -26px;
     position: absolute; */
     border: 1px solid var(--color-border);
-    background: var(--color-background);
+    background: var(--color-background-soft);
     border-radius: 8px;
     width: 50px;
     height: 50px;
+  }
+
+  
+  i.active {
+    color: var(--vt-c-white-soft);
+    border: 1px solid var(--vt-c-white-soft);
   }
 
   .item:before {

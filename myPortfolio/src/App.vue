@@ -11,9 +11,9 @@ import { RouterLink, RouterView } from "vue-router";
       <!-- <HelloWorld msg="You did it!" /> -->
 
       <nav>
-        <RouterLink to="/">Perfil</RouterLink>
-        <RouterLink to="/arts">Artes</RouterLink>
-        <RouterLink to="/design">Design</RouterLink>
+        <RouterLink to="/" title="perfil">Perfil</RouterLink>
+        <RouterLink to="/arts" title="arts">Artes</RouterLink>
+        <RouterLink to="/design" title="design">Design</RouterLink>
       </nav>
     </div>
   </header>
@@ -32,7 +32,7 @@ main {
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem 2rem;
   font-weight: normal;
 }
 
@@ -55,12 +55,20 @@ a,
 }
 
 p {
-  margin-bottom: 10px;;
+  margin-bottom: 10px;
 }
 
 @media (hover: hover) {
   a:hover {
     background-color: hsla(170, 100%, 37%, 0.2);
+  }
+
+  [title~="arts"]:hover {
+    background-color: hsla(54, 100%, 40%, 0.2);
+  }
+
+  [title~="design"]:hover {
+    background-color: hsla(0, 100%, 40%, 0.2);
   }
 }
 
@@ -72,9 +80,21 @@ nav {
 }
 
 nav a.router-link-exact-active {
+  color: var(--vt-c-white-soft);
+}
+
+nav a.router-link-exact-active[title~="perfil"] {
   /* color: var(--color-text); */
-  color: hsla(170, 100%, 37%, 1);
+  /* color: hsla(170, 100%, 37%, 1); */
   border-bottom: 1px solid hsla(170, 100%, 37%, 1);
+}
+
+nav a.router-link-exact-active[title~="arts"] {
+  border-bottom: 1px solid hsla(54, 100%, 40%, 1);
+}
+
+nav a.router-link-exact-active[title~="design"] {
+  border-bottom: 1px solid hsla(0, 100%, 40%, 1);
 }
 
 nav a.router-link-exact-active:hover {
