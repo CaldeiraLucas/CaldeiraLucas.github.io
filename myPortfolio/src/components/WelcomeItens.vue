@@ -6,20 +6,33 @@ import WelcomeItem from "./WelcomeItem.vue";
   <div style="padding-top: 30px; overflow-y: hidden">
     <WelcomeItem>
       <template #heading>Quem sou</template>
-      <p>
-        Bacharel em Desenho Industrial com Habilitação em Design de Mídias
-        Digitais pela PUC-Rio (2014-2019).
-      </p>
-      <p>
-        Embora seja de falar pouco, gosta de ouvir as pessoas. Racional,
-        empático e esforçado, tenta ser útil o quanto possível para a equipe. Em
-        busca de mais conhecimentos em desenvolvimento web (front-end) e
-        ilustração.
-      </p>
-      <p>
-        Nas horas vagas, ouve música, pratica esportes, assiste Youtube ou
-        Netflix, e joga casualmente.
-      </p>
+      <div class="content">
+        <div class="pf_image"><img src="../assets/photo.jpg" alt="" /></div>
+        <div>
+          <p>
+            Bacharel em Desenho Industrial com Habilitação em Design de Mídias
+            Digitais pela PUC-Rio (2014-2019).
+          </p>
+          <p>
+            Embora seja de falar pouco, gosta de ouvir as pessoas. Racional,
+            empático e esforçado, tenta ser útil o quanto possível para a
+            equipe. Em busca de mais conhecimentos em desenvolvimento web
+            (front-end) e ilustração.
+          </p>
+          <p>
+            Nas horas vagas, ouve música, pratica esportes, assiste Youtube ou
+            Netflix, e joga casualmente.
+          </p>
+        </div>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/CaldeiraLucas" target="_blank"><img src="../assets/GitHub-Mark-Light-64px.png" alt="" /></a>
+        <a href="https://www.linkedin.com/in/lucas-caldeira-de-macedo-aaba08134/" target="_blank"><img src="../assets/In-White-48.png" alt="" /></a>
+        <a href="https://www.behance.net/LucasCaldeira" target="_blank"><img src="../assets/behance.jpeg" alt="" /></a>
+        <a href="https://www.pixiv.net/en/users/5951600" target="_blank"><img src="../assets/pixiv.png" alt="" /></a>
+        <a href="https://www.deviantart.com/lucascaldeira" target="_blank"><img src="../assets/deviantart.png" alt="" /></a>
+        <a href="https://www.instagram.com/l.caldeira.m/" target="_blank"><img src="../assets/instagram.png" alt="" /></a>
+      </div>
     </WelcomeItem>
 
     <WelcomeItem>
@@ -87,3 +100,37 @@ import WelcomeItem from "./WelcomeItem.vue";
     </WelcomeItem>
   </div>
 </template>
+
+<style scoped>
+.content {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 40px;
+}
+
+.pf_image {
+  width: 250px;
+  overflow: hidden;
+}
+
+.pf_image img {
+  width: 400px;
+  margin-left: -100px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.socials a:hover {
+  background-color: transparent;
+}
+
+.socials img {
+  width: 45px;
+  border-radius: 5px;
+}
+</style>
