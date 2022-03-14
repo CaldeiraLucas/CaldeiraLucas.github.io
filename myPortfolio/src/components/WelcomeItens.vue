@@ -49,23 +49,21 @@ import WelcomeItem from "./WelcomeItem.vue";
     </WelcomeItem>
 
     <WelcomeItem>
-      <template #icon>
-        <EcosystemIcon />
-      </template>
       <template #heading>Experiências profissionais</template>
 
-      Get official tools and libraries for your project:
-      <a target="_blank" href="https://pinia.vuejs.org/">Pinia</a>,
-      <a target="_blank" href="https://router.vuejs.org/">Vue Router</a>,
-      <a target="_blank" href="https://test-utils.vuejs.org/">Vue Test Utils</a
-      >, and
-      <a target="_blank" href="https://github.com/vuejs/devtools"
-        >Vue Dev Tools</a
-      >. If you need more resources, we suggest paying
-      <a target="_blank" href="https://github.com/vuejs/awesome-vue"
-        >Awesome Vue</a
-      >
-      a visit.
+      <ul>
+        <li>
+          Monitorias PUC-Rio
+          <ul>
+            <li>Modelagem virtual (2016.2 - 2017.1)</li>
+            <li>Edição e tratamento de imagem (2018.1)</li>
+          </ul>
+        </li>
+        <li>Tradutor e editor na VNX+</li>
+        <li>Editor na Noveland (2018 - 2020)</li>
+        <li>UI Designer/Front End Dev Jr na Voodfy (2020 - 2021)</li>
+        <li>Diagramador de capas na Kiniga (2021 - )</li>
+      </ul>
     </WelcomeItem>
 
     <WelcomeItem>
