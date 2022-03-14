@@ -4,26 +4,29 @@ import DocumentationIcon from "./icons/IconDocumentation.vue";
 
 <template>
   <div class="icons">
-      <i className="active">
-    <slot name="icon1"></slot>
+    <i className="active">
+      <slot name="icon1"></slot>
     </i>
     <i>
-    <slot name="icon2"></slot>
+      <slot name="icon2"></slot>
     </i>
     <i>
-    <slot name="icon3"></slot>
+      <slot name="icon3"></slot>
+    </i>
+    <i>
+      <slot name="icon4"></slot>
     </i>
   </div>
 </template>
 
 <style scoped>
 .icons {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-    position: fixed;
-    align-self: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  align-self: center;
 }
 
 i {
@@ -59,14 +62,13 @@ h3 {
     height: 50px;
   }
 
-  
   i.active {
     color: var(--vt-c-white-soft);
     border: 1px solid var(--vt-c-white-soft);
   }
 
   .item:before {
-    content: ' ';
+    content: " ";
     border-left: 1px solid var(--color-border);
     position: absolute;
     left: 0;
@@ -75,7 +77,7 @@ h3 {
   }
 
   .item:after {
-    content: ' ';
+    content: " ";
     border-left: 1px solid var(--color-border);
     position: absolute;
     left: 0;
