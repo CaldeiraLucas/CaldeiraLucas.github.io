@@ -26,12 +26,26 @@ import WelcomeItem from "./WelcomeItem.vue";
         </div>
       </div>
       <div class="socials">
-        <a href="https://github.com/CaldeiraLucas" target="_blank"><img src="../assets/GitHub-Mark-Light-64px.png" alt="" /></a>
-        <a href="https://www.linkedin.com/in/lucas-caldeira-de-macedo-aaba08134/" target="_blank"><img src="../assets/In-White-48.png" alt="" /></a>
-        <a href="https://www.behance.net/LucasCaldeira" target="_blank"><img src="../assets/behance.jpeg" alt="" /></a>
-        <a href="https://www.pixiv.net/en/users/5951600" target="_blank"><img src="../assets/pixiv.png" alt="" /></a>
-        <a href="https://www.deviantart.com/lucascaldeira" target="_blank"><img src="../assets/deviantart.png" alt="" /></a>
-        <a href="https://www.instagram.com/l.caldeira.m/" target="_blank"><img src="../assets/instagram.png" alt="" /></a>
+        <a href="https://github.com/CaldeiraLucas" target="_blank"
+          ><img src="../assets/GitHub-Mark-Light-64px.png" alt=""
+        /></a>
+        <a
+          href="https://www.linkedin.com/in/lucas-caldeira-de-macedo-aaba08134/"
+          target="_blank"
+          ><img src="../assets/In-White-48.png" alt=""
+        /></a>
+        <a href="https://www.behance.net/LucasCaldeira" target="_blank"
+          ><img src="../assets/behance.jpeg" alt=""
+        /></a>
+        <a href="https://www.pixiv.net/en/users/5951600" target="_blank"
+          ><img src="../assets/pixiv.png" alt=""
+        /></a>
+        <a href="https://www.deviantart.com/lucascaldeira" target="_blank"
+          ><img src="../assets/deviantart.png" alt=""
+        /></a>
+        <a href="https://www.instagram.com/l.caldeira.m/" target="_blank"
+          ><img src="../assets/instagram.png" alt=""
+        /></a>
       </div>
     </WelcomeItem>
 
@@ -67,23 +81,44 @@ import WelcomeItem from "./WelcomeItem.vue";
     </WelcomeItem>
 
     <WelcomeItem>
-      <template #icon>
-        <CommunityIcon />
-      </template>
       <template #heading>Conhecimentos</template>
 
-      Got stuck? Ask your question on
-      <a target="_blank" href="https://chat.vuejs.org">Vue Land</a>, our
-      official Discord server, or
-      <a
-        target="_blank"
-        href="https://stackoverflow.com/questions/tagged/vue.js"
-        >StackOverflow</a
-      >. You should also subscribe to
-      <a target="_blank" href="https://news.vuejs.org">our mailing list</a> and
-      follow the official
-      <a target="_blank" href="https://twitter.com/vuejs">@vuejs</a>
-      twitter account for latest news in the Vue world.
+      <div class="dev_web">
+        <h2>Desenvolvimento Web</h2>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Javascript</li>
+          <li>Bootstrap</li>
+          <li>Wordpress</li>
+          <li>Vue.js</li>
+          <li>Git</li>
+          <li>Figma</li>
+        </ul>
+      </div>
+      <div class="edit">
+        <h2>Design, Artes e Edição</h2>
+        <ul>
+          <li>Photoshop</li>
+          <li>After Effects</li>
+          <li>Premiere</li>
+          <li>InDesign</li>
+          <li>Illustrator</li>
+          <li>Paint Tool SAI</li>
+        </ul>
+      </div>
+      <div class="lang">
+        <h2>Idiomas</h2>
+        <ul>
+          <li>Inglês</li>
+          <li>Espanhol</li>
+        </ul>
+      </div>
+      <div class="others">
+        <div class="pill">GameMaker Studio</div>
+        <div class="pill">Microsoft Office</div>
+        <div class="pill">Autodesk 3D Studio Max</div>
+      </div>
     </WelcomeItem>
   </div>
 </template>
@@ -119,5 +154,78 @@ import WelcomeItem from "./WelcomeItem.vue";
 .socials img {
   width: 45px;
   border-radius: 5px;
+}
+
+.dev_web, .edit, .lang {
+	border-radius: 15px;
+	margin-top: 40px;
+	width: fit-content;
+}
+
+.dev_web {
+	border: 3px solid #009CDE;
+}
+
+.edit {
+	border: 3px solid #F19800;
+}
+
+.lang {
+	border: 3px solid #E0040B;
+}
+
+.pill {
+	border: 2px solid #FFFFFF;
+	border-radius: 15px;
+	margin-top: 20px;
+	margin-right: 20px;
+	width: fit-content;
+	padding: 5px 15px;
+	white-space: nowrap;
+}
+
+
+h2 {
+	font-size: 16px;
+	width: fit-content;
+	padding: 2px 12px;
+	/* border-radius: 15px; */
+	margin-top: -20px;
+	margin-left: 20px;
+  color: #fff;
+  background: var(--color-background-soft);
+}
+
+/* .dev_web h2 {
+	background: #009CDE;
+}
+
+.edit h2 {
+	background: #F19800;
+}
+
+.lang h2 {
+	background: #E0040B;
+} */
+
+.others {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.dev_web ul, .edit ul, .lang ul {
+	list-style: none;
+	display: flex;
+	padding: 5px 20px 15px 20px;
+	margin: 0;
+	flex-wrap: wrap;
+}
+
+.dev_web ul li, .edit ul li, .lang ul li {
+	margin-right: 30px;
+}
+
+ul li:last-child {
+	margin-right: 0;
 }
 </style>
