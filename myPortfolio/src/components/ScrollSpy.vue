@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import DocumentationIcon from "./icons/IconDocumentation.vue";
+
 </script>
 
 <template>
@@ -7,7 +8,7 @@ import DocumentationIcon from "./icons/IconDocumentation.vue";
     <i className="active">
       <slot name="icon1"></slot>
     </i>
-    <i>
+    <i className="">
       <slot name="icon2"></slot>
     </i>
     <i>
@@ -29,7 +30,7 @@ import DocumentationIcon from "./icons/IconDocumentation.vue";
   align-self: center;
 }
 
-i {
+i{
   display: flex;
   place-items: center;
   place-content: center;
@@ -38,19 +39,14 @@ i {
   color: var(--color-text);
 }
 
-h3 {
+/* h3 {
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 0.4rem;
   color: var(--color-heading);
-}
+} */
 
 @media (min-width: 1024px) {
-  .item {
-    margin-top: 0;
-    /* padding: 0.4rem 0 1rem calc(var(--section-gap) / 2); */
-  }
-
   i {
     /* top: calc(50% - 25px);
     left: -26px;
@@ -62,7 +58,7 @@ h3 {
     height: 50px;
   }
 
-  i.active {
+  i.active, #profile-icon.active {
     color: var(--vt-c-white-soft);
     border: 1px solid var(--vt-c-white-soft);
   }

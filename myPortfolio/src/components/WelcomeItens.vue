@@ -1,12 +1,60 @@
 <script setup lang="ts">
 import WelcomeItem from "./WelcomeItem.vue";
+
+window.onload = function () {
+  let icon1: any = document.getElementsByTagName("I");
+  let altura: number = document.getElementsByClassName("item")[0].clientHeight;
+  let i = 0;
+
+  window.addEventListener("wheel", function (event) {
+    if (event.deltaY > 0) {
+      if (i < icon1.length - 1) {
+        icon1[i].classList.toggle("active");
+        icon1[i + 1].classList.toggle("active");
+
+        ++i;
+        document
+          .getElementById("content")
+          .scrollTo({ top: altura * i, behavior: "smooth" });
+      } else if (i >= icon1.length - 1) {
+        i = 0;
+        icon1[i].classList.toggle("active");
+        icon1[icon1.length - 1].classList.toggle("active");
+        document
+          .getElementById("content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+
+    if (event.deltaY < 0) {
+      if (i <= 0) {
+        icon1[i].classList.toggle("active");
+        icon1[icon1.length - 1].classList.toggle("active");
+        document.getElementById("content").scrollTo({
+          top: document.getElementsByClassName("item")[0].clientHeight * 3,
+          behavior: "smooth",
+        });
+        i = icon1.length - 1;
+      } else if (i > 0) {
+        icon1[i].classList.toggle("active");
+        icon1[i - 1].classList.toggle("active");
+        --i;
+        document.getElementById("content").scrollTo({
+          top: altura * i,
+          behavior: "smooth",
+        });
+      }
+    }
+    console.log(i);
+  });
+};
 </script>
 
 <template>
-  <div style="padding-top: 30px; overflow-y: hidden">
+  <div id="content">
     <WelcomeItem>
       <template #heading>Quem sou</template>
-      <div class="content">
+      <div class="presentation">
         <div class="pf_image"><img src="../assets/photo.jpg" alt="" /></div>
         <div>
           <p>
@@ -124,7 +172,12 @@ import WelcomeItem from "./WelcomeItem.vue";
 </template>
 
 <style scoped>
-.content {
+#content {
+  padding-top: 30px; 
+  overflow-y: hidden
+}
+
+.presentation {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 40px;
@@ -156,42 +209,43 @@ import WelcomeItem from "./WelcomeItem.vue";
   border-radius: 5px;
 }
 
-.dev_web, .edit, .lang {
-	border-radius: 15px;
-	margin-top: 40px;
-	width: fit-content;
+.dev_web,
+.edit,
+.lang {
+  border-radius: 15px;
+  margin-top: 40px;
+  width: fit-content;
 }
 
 .dev_web {
-	border: 3px solid #009CDE;
+  border: 3px solid #009cde;
 }
 
 .edit {
-	border: 3px solid #F19800;
+  border: 3px solid #f19800;
 }
 
 .lang {
-	border: 3px solid #E0040B;
+  border: 3px solid #e0040b;
 }
 
 .pill {
-	border: 2px solid #FFFFFF;
-	border-radius: 15px;
-	margin-top: 20px;
-	margin-right: 20px;
-	width: fit-content;
-	padding: 5px 15px;
-	white-space: nowrap;
+  border: 2px solid #ffffff;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-right: 20px;
+  width: fit-content;
+  padding: 5px 15px;
+  white-space: nowrap;
 }
 
-
 h2 {
-	font-size: 16px;
-	width: fit-content;
-	padding: 2px 12px;
-	/* border-radius: 15px; */
-	margin-top: -20px;
-	margin-left: 20px;
+  font-size: 16px;
+  width: fit-content;
+  padding: 2px 12px;
+  /* border-radius: 15px; */
+  margin-top: -20px;
+  margin-left: 20px;
   color: #fff;
   background: var(--color-background-soft);
 }
@@ -209,23 +263,27 @@ h2 {
 } */
 
 .others {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.dev_web ul, .edit ul, .lang ul {
-	list-style: none;
-	display: flex;
-	padding: 5px 20px 15px 20px;
-	margin: 0;
-	flex-wrap: wrap;
+.dev_web ul,
+.edit ul,
+.lang ul {
+  list-style: none;
+  display: flex;
+  padding: 5px 20px 15px 20px;
+  margin: 0;
+  flex-wrap: wrap;
 }
 
-.dev_web ul li, .edit ul li, .lang ul li {
-	margin-right: 30px;
+.dev_web ul li,
+.edit ul li,
+.lang ul li {
+  margin-right: 30px;
 }
 
 ul li:last-child {
-	margin-right: 0;
+  margin-right: 0;
 }
 </style>
