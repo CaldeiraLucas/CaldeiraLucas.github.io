@@ -8,8 +8,6 @@ import { RouterLink, RouterView } from "vue-router";
     <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="400" />
 
     <div class="wrapper">
-      <!-- <HelloWorld msg="You did it!" /> -->
-
       <nav>
         <RouterLink to="/" title="perfil">Perfil</RouterLink>
         <RouterLink to="/arts" title="arts">Artes</RouterLink>
@@ -17,12 +15,31 @@ import { RouterLink, RouterView } from "vue-router";
       </nav>
     </div>
   </header>
-
-  <RouterView />
+  <transition name="slide-fade" mode="out-in">
+    <RouterView  />
+  </transition>
 </template>
 
 <style>
 @import "@/assets/base.css";
+
+
+
+.slide-fade-enter-active {
+  transition: all 0.5s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  opacity: 0;
+}
+
+
+
 
 main {
   display: grid;
@@ -81,6 +98,7 @@ nav {
 
 nav a.router-link-exact-active {
   color: var(--vt-c-white-soft);
+  border-bottom: none;
 }
 
 nav a.router-link-exact-active[title~="perfil"] {
