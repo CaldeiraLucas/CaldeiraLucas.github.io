@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 // import HelloWorld from '@/components/HelloWorld.vue'
+
 </script>
 
 <template>
@@ -15,31 +16,28 @@ import { RouterLink, RouterView } from "vue-router";
       </nav>
     </div>
   </header>
-  <transition name="slide-fade" mode="out-in">
-    <RouterView  />
-  </transition>
+  <RouterView v-slot="{ Component }">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </RouterView>
 </template>
 
 <style>
 @import "@/assets/base.css";
 
-
-
-.slide-fade-enter-active {
-  transition: all 0.5s ease-out;
+.fade-enter-active {
+  transition: all 0.3s ease-out;
 }
 
-.slide-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+.fade-leave-active {
+  transition: all 0.3s ease-out;
 }
 
-.slide-fade-enter-from,
-.slide-fade-leave-to {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
-
-
-
 
 main {
   display: grid;
@@ -98,7 +96,6 @@ nav {
 
 nav a.router-link-exact-active {
   color: var(--vt-c-white-soft);
-  border-bottom: none;
 }
 
 nav a.router-link-exact-active[title~="perfil"] {
