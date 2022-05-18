@@ -1,60 +1,11 @@
 <script setup lang="ts">
 import WelcomeItem from "./WelcomeItem.vue";
+import scrollBehavior from "./scroll";
 
-window.onload = function () {
-  let icon1: any = document.getElementsByTagName("I");
-  let altura: number = document.getElementsByClassName("item")[0].clientHeight;
-  let i = 0;
-
-  window.addEventListener("wheel", iconBehavior);
-  window.addEventListener("keydown", iconBehavior);
-
-  function iconBehavior(event: any) {
-    if (
-      event.deltaY > 0 ||
-      event.key == "ArrowDown" ||
-      event.key == "PageDown"
-    ) {
-      if (i < icon1.length - 1) {
-        icon1[i].classList.toggle("active");
-        icon1[i + 1].classList.toggle("active");
-
-        ++i;
-        document
-          .getElementById("content")
-          .scrollTo({ top: altura * i, behavior: "smooth" });
-      } else if (i >= icon1.length - 1) {
-        i = 0;
-        icon1[i].classList.toggle("active");
-        icon1[icon1.length - 1].classList.toggle("active");
-        document
-          .getElementById("content")
-          .scrollTo({ top: 0, behavior: "smooth" });
-      }
-    }
-
-    if (event.deltaY < 0 || event.key == "ArrowUp" || event.key == "PageUp") {
-      if (i <= 0) {
-        icon1[i].classList.toggle("active");
-        icon1[icon1.length - 1].classList.toggle("active");
-        document.getElementById("content").scrollTo({
-          top: document.getElementsByClassName("item")[0].clientHeight * 3,
-          behavior: "smooth",
-        });
-        i = icon1.length - 1;
-      } else if (i > 0) {
-        icon1[i].classList.toggle("active");
-        icon1[i - 1].classList.toggle("active");
-        --i;
-        document.getElementById("content").scrollTo({
-          top: altura * i,
-          behavior: "smooth",
-        });
-      }
-    }
-    console.log(i);
-  }
-};
+ window.onload = function() {
+    let icon1: any = document.getElementsByTagName("I"); 
+    scrollBehavior(icon1);
+ }
 </script>
 
 <template>
@@ -70,8 +21,8 @@ window.onload = function () {
           </p>
           <p>
             Embora seja de falar pouco, gosta de ouvir as pessoas. Racional,
-            empático e esforçado, tenta ser útil o quanto possível para a
-            equipe. Em busca de mais conhecimentos em desenvolvimento web
+            empático e esforçado, tenta ser útil o quanto possível para os outros. 
+            Em busca de mais conhecimentos em desenvolvimento web
             (front-end) e ilustração.
           </p>
           <p>
