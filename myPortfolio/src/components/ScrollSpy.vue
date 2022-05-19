@@ -7,7 +7,7 @@ import DocumentationIcon from "./icons/IconDocumentation.vue";
     <i className="active">
       <slot name="icon1"></slot>
     </i>
-    <i className="">
+    <i>
       <slot name="icon2"></slot>
     </i>
     <i>

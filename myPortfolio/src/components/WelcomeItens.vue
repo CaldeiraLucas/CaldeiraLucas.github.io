@@ -1,35 +1,158 @@
 <script setup lang="ts">
 import WelcomeItem from "./WelcomeItem.vue";
 import scrollBehavior from "./scroll";
+import languageSelect from "./language";
 
- window.onload = function() {
-    let icon1: any = document.getElementsByTagName("I"); 
-    scrollBehavior(icon1);
- }
-</script>
+window.onload = function () {
+  let icon1: any = document.getElementsByTagName("I");
+  scrollBehavior(icon1);
+};
 
-<template>
-  <div id="content">
-    <WelcomeItem>
-      <template #heading>Quem sou</template>
-      <div class="presentation">
-        <div class="pf_image"><img src="../assets/photo.jpg" alt="" /></div>
-        <div>
-          <p>
-            Bacharel em Desenho Industrial com Habilitação em Design de Mídias
+const language = languageSelect();
+
+const pt = {
+  intro: {
+    title: "Quem sou",
+    text: `<p>Bacharel em Desenho Industrial com Habilitação em Design de Mídias
             Digitais pela PUC-Rio (2014-2019).
           </p>
           <p>
             Embora seja de falar pouco, gosta de ouvir as pessoas. Racional,
-            empático e esforçado, tenta ser útil o quanto possível para os outros. 
-            Em busca de mais conhecimentos em desenvolvimento web
+            empático e esforçado, tenta ser útil o quanto possível para os
+            outros. Em busca de mais conhecimentos em desenvolvimento web
             (front-end) e ilustração.
           </p>
           <p>
             Nas horas vagas, ouve música, pratica esportes, assiste Youtube ou
             Netflix, e joga casualmente.
-          </p>
-        </div>
+          </p>`,
+  },
+  courses: {
+    title: "Cursos",
+    text: `        <li>Design Gráfico e Web Design (Seven/2014)</li>
+        <li>Inglês (Kumon/2019)</li>
+        <li>Introdução à linguagem Python (Udemy/2019)</li>
+        <li>Introdução à linguagem Javascript (Udemy/2019)</li>
+        <li>Vuejs - Primeiros Passos (Udemy)</li>
+        <li>Git e Github para iniciantes (Udemy)</li>`,
+  },
+  exp: {
+    title: "Experiências profissionais",
+    text: `        <li>
+          Monitorias PUC-Rio
+          <ul>
+            <li>Modelagem virtual (2016.2 - 2017.1)</li>
+            <li>Edição e tratamento de imagem (2018.1)</li>
+          </ul>
+        </li>
+        <li>Tradutor e editor na VNX+</li>
+        <li>Editor na Noveland (2018 - 2020)</li>
+        <li>UI Designer/Front End Dev Jr na Voodfy (2020 - 2021)</li>
+        <li>Diagramador de capas na Kiniga (2021 - )</li>`,
+  },
+  knowhow: {
+    title: "Conhecimentos",
+    subtitle: [
+      "Desenvolvimento Web",
+      "Design, Artes e Edição",
+      "Idiomas",
+      "Outros",
+    ],
+    text: ["Inglês", "Espanhol"],
+  },
+};
+
+const en = {
+  intro: {
+    title: "Who I am",
+    text: `                    <p>
+                    Bachelor in Industrial Design with Qualification in Digital Media Design at PUC-Rio (2014-2019)
+                    </p>
+                    <p>
+                    Although he doesn't talk much, he likes to listen to people.
+                    Rational, empathetic and hardworking, try to be as helpful as possible for the team.
+                    Looking for more knowledge in web development (front-end) and illustration.
+                    </p>
+                    <p>
+                    In spare time, listen music, play sports, watch Youtube or Netflix, and casually play video-games.
+                    </p>`,
+  },
+  courses: {
+    title: "Courses",
+    text: `
+                    <li>Graphic Design and Web Design (Seven/2014)</li>
+                    <li>English (Kumon/2019)</li>
+                    <li>"Introduction to the Python language" (Udemy/2019)</li>
+                    <li>"Introduction to the Javascript language" (Udemy/2019)</li>
+                    <li>"Vuejs - First Steps" (Udemy)</li>
+                    <li>"Git and Github for beginners" (Udemy)</li>
+                `,
+  },
+  exp: {
+    title: "Professional experiences",
+    text: `
+                    <li>Tutorships PUC-Rio
+                    <ul>
+                        <li>Virtual modeling (2016.2 - 2017.1)</li>
+                        <li>Editing and image processing (2018.1)</li>
+                    </ul>
+                    </li>
+                    <li>Translator and editor at VNX+</li>
+                    <li>Editor at Noveland (2018 - 2020)</li>
+                    <li>UI Designer/Front End Dev Jr at Voodfy (2020 - 2021)</li>
+                    <li>Cover editor at Kiniga (2021)</li>
+                `,
+  },
+  knowhow: {
+    title: "Knowledges",
+    subtitle: [
+      "Web Development",
+      "Design, Arts and Editing",
+      "Languages",
+      "Others",
+    ],
+    text: ["English", "Spanish"],
+  },
+};
+
+let title, subtitle, text;
+
+switch (language) {
+  case "pt":
+    {
+      title = [
+        pt.intro.title,
+        pt.courses.title,
+        pt.exp.title,
+        pt.knowhow.title,
+      ];
+      (subtitle = pt.knowhow.subtitle),
+        (text = [pt.intro.text, pt.courses.text, pt.exp.text, pt.knowhow.text]);
+    }
+    break;
+
+  case "en":
+    {
+      title = [
+        en.intro.title,
+        en.courses.title,
+        en.exp.title,
+        en.knowhow.title,
+      ];
+      (subtitle = en.knowhow.subtitle),
+        (text = [en.intro.text, en.courses.text, en.exp.text, en.knowhow.text]);
+    }
+    break;
+}
+</script>
+
+<template>
+  <div id="content">
+    <WelcomeItem>
+      <template #heading>{{ title[0] }}</template>
+      <div class="presentation">
+        <div class="pf_image"><img src="../assets/photo.jpg" alt="" /></div>
+        <div v-html="text[0]"></div>
       </div>
       <div class="socials">
         <a href="https://github.com/CaldeiraLucas" target="_blank"
@@ -56,41 +179,19 @@ import scrollBehavior from "./scroll";
     </WelcomeItem>
 
     <WelcomeItem>
-      <template #heading>Cursos</template>
-
-      <ul>
-        <li>Design Gráfico e Web Design (Seven/2014)</li>
-        <li>Inglês (Kumon/2019)</li>
-        <li>Introdução à linguagem Python (Udemy/2019)</li>
-        <li>Introdução à linguagem Javascript (Udemy/2019)</li>
-        <li>Vuejs - Primeiros Passos (Udemy)</li>
-        <li>Git e Github para iniciantes (Udemy)</li>
-      </ul>
+      <template #heading>{{ title[1] }}</template>
+      <ul v-html="text[1]"></ul>
     </WelcomeItem>
 
     <WelcomeItem>
-      <template #heading>Experiências profissionais</template>
-
-      <ul>
-        <li>
-          Monitorias PUC-Rio
-          <ul>
-            <li>Modelagem virtual (2016.2 - 2017.1)</li>
-            <li>Edição e tratamento de imagem (2018.1)</li>
-          </ul>
-        </li>
-        <li>Tradutor e editor na VNX+</li>
-        <li>Editor na Noveland (2018 - 2020)</li>
-        <li>UI Designer/Front End Dev Jr na Voodfy (2020 - 2021)</li>
-        <li>Diagramador de capas na Kiniga (2021 - )</li>
-      </ul>
+      <template #heading>{{ title[2] }}</template>
+      <ul v-html="text[2]"></ul>
     </WelcomeItem>
 
     <WelcomeItem>
-      <template #heading>Conhecimentos</template>
-
+      <template #heading>{{ title[3] }}</template>
       <div class="dev_web">
-        <h2>Desenvolvimento Web</h2>
+        <h2>{{ subtitle[0] }}</h2>
         <ul>
           <li>HTML</li>
           <li>CSS</li>
@@ -103,7 +204,7 @@ import scrollBehavior from "./scroll";
         </ul>
       </div>
       <div class="edit">
-        <h2>Design, Artes e Edição</h2>
+        <h2>{{ subtitle[1] }}</h2>
         <ul>
           <li>Photoshop</li>
           <li>After Effects</li>
@@ -114,16 +215,19 @@ import scrollBehavior from "./scroll";
         </ul>
       </div>
       <div class="lang">
-        <h2>Idiomas</h2>
+        <h2>{{ subtitle[2] }}</h2>
         <ul>
-          <li>Inglês</li>
-          <li>Espanhol</li>
+          <li>{{ text[3][0] }}</li>
+          <li>{{ text[3][1] }}</li>
         </ul>
       </div>
       <div class="others">
-        <div class="pill">GameMaker Studio</div>
-        <div class="pill">Microsoft Office</div>
-        <div class="pill">Autodesk 3D Studio Max</div>
+        <h2>{{ subtitle[3] }}</h2>
+        <ul>
+          <li>GameMaker Studio</li>
+          <li>Microsoft Office</li>
+          <li>Autodesk 3D Studio Max</li>
+        </ul>
       </div>
     </WelcomeItem>
   </div>
@@ -169,7 +273,8 @@ import scrollBehavior from "./scroll";
 
 .dev_web,
 .edit,
-.lang {
+.lang,
+.others {
   border-radius: 15px;
   margin-top: 40px;
   width: fit-content;
@@ -187,7 +292,11 @@ import scrollBehavior from "./scroll";
   border: 3px solid #e0040b;
 }
 
-.pill {
+.others {
+  border: 3px solid #00bd9d;
+}
+
+/* .pill {
   border: 2px solid var(--color-text);
   border-radius: 15px;
   margin-top: 20px;
@@ -195,7 +304,7 @@ import scrollBehavior from "./scroll";
   width: fit-content;
   padding: 5px 15px;
   white-space: nowrap;
-}
+} */
 
 h2 {
   font-size: 16px;
@@ -220,14 +329,15 @@ h2 {
 	background: #E0040B;
 } */
 
-.others {
+/* .others {
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
 .dev_web ul,
 .edit ul,
-.lang ul {
+.lang ul,
+.others ul {
   list-style: none;
   display: flex;
   padding: 5px 20px 15px 20px;
@@ -237,7 +347,8 @@ h2 {
 
 .dev_web ul li,
 .edit ul li,
-.lang ul li {
+.lang ul li,
+.others ul li {
   margin-right: 30px;
 }
 
