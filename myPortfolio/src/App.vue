@@ -1,7 +1,27 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 // import HelloWorld from '@/components/HelloWorld.vue'
+import languageSelect from "./components/language";
 
+const language = languageSelect();
+const pt = ["Perfil", "Artes"];
+const en = ["Profile", "Arts"];
+
+let menu;
+
+switch (language) {
+  case "pt":
+    {
+      menu = pt;
+    }
+    break;
+
+  case "en":
+    {
+      menu = en;
+    }
+    break;
+}
 </script>
 
 <template>
@@ -10,9 +30,9 @@ import { RouterLink, RouterView } from "vue-router";
 
     <div class="wrapper">
       <nav>
-        <RouterLink to="/" title="perfil">Perfil</RouterLink>
-        <RouterLink to="/arts" title="arts">Artes</RouterLink>
-        <RouterLink to="/design" title="design">Design</RouterLink>
+        <RouterLink to="/" name="perfil">{{ menu[0] }}</RouterLink>
+        <RouterLink to="/arts" name="arts">{{ menu[1] }}</RouterLink>
+        <RouterLink to="/design" name="design">Design</RouterLink>
       </nav>
     </div>
   </header>
@@ -78,11 +98,11 @@ p {
     background-color: hsla(170, 100%, 37%, 0.2);
   }
 
-  [title~="arts"]:hover {
+  [name~="arts"]:hover {
     background-color: hsla(54, 100%, 40%, 0.2);
   }
 
-  [title~="design"]:hover {
+  [name~="design"]:hover {
     background-color: hsla(0, 100%, 40%, 0.2);
   }
 }
@@ -98,17 +118,17 @@ nav a.router-link-exact-active {
   color: var(--vt-c-white-soft);
 }
 
-nav a.router-link-exact-active[title~="perfil"] {
+nav a.router-link-exact-active[name~="perfil"] {
   /* color: var(--color-text); */
   /* color: hsla(170, 100%, 37%, 1); */
   border-bottom: 1px solid hsla(170, 100%, 37%, 1);
 }
 
-nav a.router-link-exact-active[title~="arts"] {
+nav a.router-link-exact-active[name~="arts"] {
   border-bottom: 1px solid hsla(54, 100%, 40%, 1);
 }
 
-nav a.router-link-exact-active[title~="design"] {
+nav a.router-link-exact-active[name~="design"] {
   border-bottom: 1px solid hsla(0, 100%, 40%, 1);
 }
 
