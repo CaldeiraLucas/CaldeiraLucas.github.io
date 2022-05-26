@@ -70,7 +70,7 @@ let files = {
 
   <ArtGroup>
     <template #heading>Cópias</template>
-    <div class="row">
+    <div class="row"  id="copies">
       <ul>
         <li v-for="(item, index) in files.copies" :key="item" @click="toggle(files.copies, index)">
           <img :src="item" />
@@ -101,13 +101,19 @@ let files = {
 </template>
 
 <style scoped>
+.row {
+  overflow: hidden;
+}
+
 ul {
   list-style: none;
   padding: 0;
-  display: flex;
+  display: grid;
+  grid-template: 200px / repeat(12, 1fr);
   align-items: center;
   margin: 0;
   gap: 10px;
+
 }
 
 li {
