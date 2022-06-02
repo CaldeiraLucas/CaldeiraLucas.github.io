@@ -1,15 +1,28 @@
 <script setup>
-  function teste(ev, x) {
-    let subj = ev.path[1].children[1];
-    let dir = ev.target.className;
+function teste(ev, x) {
+  let subj = ev.path[1].children[1];
+  let dir = ev.target.className;
+  let scrollPos = subj.scrollLeft;
 
-    if(dir == 'left'){
-      subj.scrollBy({ left: -subj.offsetWidth, behavior: 'smooth' });
-    }
-    if(dir == 'right'){
-      subj.scrollBy({ left: subj.offsetWidth, behavior: 'smooth' });
-    }
+  if (dir == "left") {
+    subj.scrollBy({ left: -subj.offsetWidth - 10, behavior: "smooth" });
+    scrollPos = scrollPos -subj.offsetWidth - 10;
   }
+  if (dir == "right") {
+    subj.scrollBy({ left: subj.offsetWidth + 10, behavior: "smooth" });
+    scrollPos = scrollPos +subj.offsetWidth + 10;
+  }
+
+  // console.log(scrollPos + subj.offsetWidth)
+  // console.log(subj.scrollWidth)
+
+  if (scrollPos > 0)
+    ev.path[1].children[0].style.visibility = "visible";
+  else ev.path[1].children[0].style.visibility = "hidden";
+  if (scrollPos + subj.offsetWidth >= subj.scrollWidth)
+    ev.path[1].children[2].style.visibility = "hidden";
+  else ev.path[1].children[2].style.visibility = "visible";
+}
 </script>
 
 <template>
@@ -19,9 +32,9 @@
         <slot name="heading"></slot>
       </h3>
       <div>
-        <a class="left" @click="event => teste(event)">&#10094;</a>
+        <a class="left" @click="(event) => teste(event)">&#10094;</a>
         <slot></slot>
-        <a class="right" @click="event => teste(event)">&#10095;</a>
+        <a class="right" @click="(event) => teste(event)">&#10095;</a>
       </div>
     </div>
   </div>
@@ -37,11 +50,11 @@
   /* margin-left: 1rem; */
 }
 
-  .details div {
-    max-width: 830px;
-    display: flex;
-    align-items: center;
-  }
+.details div {
+  max-width: 830px;
+  display: flex;
+  align-items: center;
+}
 
 h3 {
   font-size: 1.2rem;
@@ -77,6 +90,7 @@ h3 {
     rgba(0, 0, 0, 0)
   );
   padding: 0px 24px 0px 12px;
+  visibility: hidden;
 }
 
 .right {

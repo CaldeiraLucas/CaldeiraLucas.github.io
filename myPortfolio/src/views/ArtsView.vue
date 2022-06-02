@@ -44,8 +44,9 @@ console.log(getScrollbarWidth());
     overflow: hidden;
     display: grid;
     gap: 40px;
+    height: initial;
     min-height: 100vh;
-    margin-top: 30px;
+    margin: 30px 0;
   }
 }
 </style>
