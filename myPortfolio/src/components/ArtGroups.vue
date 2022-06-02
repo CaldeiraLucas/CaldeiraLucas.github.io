@@ -35,7 +35,18 @@ let files = {
   ],
   trads: [
     "src/assets/arts/ilust/Girassol.jpg",
-    "src/assets/arts/ilust/dancarina.jpeg",
+    "src/assets/arts/ilust/draw2.jpg",
+    "src/assets/arts/ilust/draw3.png",
+    "src/assets/arts/ilust/draw8.png",
+    "src/assets/arts/ilust/girl2.png",
+    "src/assets/arts/ilust/drawpaola.png",
+    "src/assets/arts/ilust/rain.png",  
+    "src/assets/arts/ilust/lightshot_1585342830.jpeg",
+    "src/assets/arts/ilust/lightshot_1585340065.jpeg",
+    "src/assets/arts/ilust/lightshot_1585339944.jpeg",
+    "src/assets/arts/ilust/lightshot_1585339318.jpeg",   
+    "src/assets/arts/ilust/char.jpg", 
+    "src/assets/arts/ilust/dancarina.jpeg", 
     "src/assets/arts/ilust/treino 001.jpg",
   ],
   digis: [
@@ -43,9 +54,16 @@ let files = {
     "src/assets/arts/ilust/PaolaNY.jpg",
     "src/assets/arts/ilust/Ayame.png",
     "src/assets/arts/ilust/Muslim.jpg",
+    "src/assets/arts/ilust/New Canvas.png",
+    "src/assets/arts/ilust/ferraria.jpg",
     "src/assets/arts/ilust/WTLD.jpg",
     "src/assets/arts/ilust/Vanessa.jpg",
     "src/assets/arts/ilust/Ciel.png",
+    "src/assets/arts/ilust/JackPark.jpg",
+    "src/assets/arts/ilust/akiha_chibi.jpg",
+    "src/assets/arts/ilust/rabisco8001_comparacao.png",
+    "src/assets/arts/ilust/draw9_comparacao.png",
+    "src/assets/arts/ilust/maid.jpg",
   ],
 };
 </script>
@@ -109,7 +127,7 @@ ul {
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template: 200px / repeat(12, 1fr);
+  grid-template: 200px / repeat(24, 1fr);
   align-items: center;
   margin: 0;
   gap: 10px;
@@ -125,7 +143,7 @@ li {
 
 li:hover {
   display: visible;
-  transition: all 0.3s;
+  transition: all 0.3s 0.2s ease;
   transform: scale(1.05);
   cursor: pointer;
 }
