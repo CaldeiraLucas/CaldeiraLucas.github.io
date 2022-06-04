@@ -1,13 +1,13 @@
-export default function (icon1:any) {
+export default function (icon1) {
 
     // let icon1: any = document.getElementsByTagName("I");
-    let altura: number = document.getElementsByClassName("item")[0].clientHeight;
+    let altura= document.getElementsByClassName("item")[0].clientHeight;
     let i = 0;
 
     window.addEventListener("wheel", iconBehavior);
     window.addEventListener("keydown", iconBehavior);
 
-    function iconBehavior(event: any) {
+    function iconBehavior(event) {
         if (
             event.deltaY > 0 ||
             event.key == "ArrowDown" ||

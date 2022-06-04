@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import TheArts from "@/components/TheArts.vue";
 
 function getScrollbarWidth() {

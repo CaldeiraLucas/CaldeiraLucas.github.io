@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import WelcomeItens from "./WelcomeItens.vue";
 import WelcomeItem from "./WelcomeItem.vue";
 import ScrollSpy from "./ScrollSpy.vue";

@@ -1,10 +1,10 @@
-<script setup lang="ts">
+<script setup>
 import WelcomeItem from "./WelcomeItem.vue";
 import scrollBehavior from "./scroll";
 import languageSelect from "./language";
 
 window.onload = function () {
-  let icon1: any = document.getElementsByTagName("I");
+  let icon1 = document.getElementsByTagName("I");
   scrollBehavior(icon1);
 };
 

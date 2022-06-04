@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import ArtGroups from "./ArtGroups.vue";
 import ArtGroup from "./ArtGroup.vue";
 </script>

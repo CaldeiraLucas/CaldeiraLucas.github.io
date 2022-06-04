@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import DocumentationIcon from "./icons/IconDocumentation.vue";
 </script>
 
