@@ -14,11 +14,11 @@
   margin-top: 2rem;
   display: flex;
   height: 75vh;
+  padding: 0 15%;
 }
 
 .details {
   flex: 1;
-  margin-left: 1rem;
 }
 
 i {
@@ -41,7 +41,6 @@ h3 {
 @media (min-width: 1024px) {
   .item {
     margin-top: 0;
-    padding: 0 250px;
   }
 
   i {

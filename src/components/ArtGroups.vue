@@ -24,15 +24,15 @@ function switchSlide(i) {
 let files = {
   copies: [
     {
-      path: "../assets/saber_lily.jpg",
+      path: new URL("../assets/saber_lily.jpg", import.meta.url).href,
       caption: "Saber Lily (Fate/Unlimited Codes)",
     },
     {
-      path: "../assets/red_arc.jpg",
+      path: new URL("../assets/red_arc.jpg", import.meta.url).href,
       caption: "Red Arcueid (Melty Blood)",
     },
     {
-      path: "../assets/white_len.jpg",
+      path: new URL("../assets/white_len.jpg", import.meta.url).href,
       caption: "White Len (Melty Blood)",
     },
     {
