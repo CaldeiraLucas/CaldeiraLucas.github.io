@@ -14,7 +14,7 @@
   margin-top: 2rem;
   display: flex;
   height: 75vh;
-  padding: 0 15%;
+  padding: 0 20%;
 }
 
 .details {

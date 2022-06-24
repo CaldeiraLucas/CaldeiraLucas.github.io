@@ -1,6 +1,6 @@
 <template>
   <div class="design">
-    <h1>This is an page in construction</h1>
+    <h1>This is an page in development</h1>
   </div>
 </template>
 

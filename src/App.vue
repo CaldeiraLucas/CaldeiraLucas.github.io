@@ -3,25 +3,8 @@ import { RouterLink, RouterView } from "vue-router";
 // import HelloWorld from '@/components/HelloWorld.vue'
 import languageSelect from "./components/language";
 
-const language = languageSelect();
-const pt = ["Perfil", "Artes"];
-const en = ["Profile", "Arts"];
+let menu = languageSelect("menu");
 
-let menu;
-
-switch (language) {
-  case "pt":
-    {
-      menu = pt;
-    }
-    break;
-
-  case "en":
-    {
-      menu = en;
-    }
-    break;
-}
 </script>
 
 <template>
@@ -95,6 +78,10 @@ p {
 
 @media (hover: hover) {
   a:hover {
+    color: #fff;
+  }
+
+  [name~="perfil"]:hover {
     background-color: hsla(170, 100%, 37%, 0.2);
   }
 
