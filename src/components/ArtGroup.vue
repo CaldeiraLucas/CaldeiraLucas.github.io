@@ -86,7 +86,7 @@ h3 {
   /* visibility: hidden; */
   background-image: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.6),
     rgba(0, 0, 0, 0)
   );
   padding: 0px 24px 0px 12px;
@@ -97,7 +97,7 @@ h3 {
   right: 0;
   background-image: linear-gradient(
     to left,
-    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.6),
     rgba(0, 0, 0, 0)
   );
   padding: 0px 12px 0px 24px;

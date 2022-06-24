@@ -1,6 +1,12 @@
 <script setup>
 import ArtGroup from "./ArtGroup.vue";
+import languageSelect from "./language";
 import { ref } from "vue";
+
+let ctg = languageSelect("arts");
+
+let title = ctg.titles;
+let captions = ctg.captions;
 
 const show = ref(false);
 const image = ref("");
@@ -36,88 +42,144 @@ let files = {
       caption: "White Len (Melty Blood)",
     },
     {
-      path: "../assets/kurisutina.png",
+      path: new URL("../assets/kurisutina.png", import.meta.url).href,
       caption: "Makise Kurisu (Steins;Gate)",
     },
     {
-      path: "../assets/reproducao1.png",
-      caption:
-        "Cópia de cena do Bruce Lee feita com papel vegetal e lápis B, 3B e 6B",
+      path: new URL("../assets/reproducao1.png", import.meta.url).href,
+      caption: captions[0],
     },
     {
-      path: "../assets/reproducao2.png",
-      caption:
-        "Cópia de fotografia de um Gaio-azul (Cyanocitta cristata) feita com papel vegetal e caneta nanquim",
+      path: new URL("../assets/reproducao2.png", import.meta.url).href,
+      caption: captions[1],
     },
     {
-      path: "../assets/reproducao3.png",
-      caption: "Cópia de fotografia feita com papel vegetal e caneta nanquim",
+      path: new URL("../assets/reproducao3.png", import.meta.url).href,
+      caption: captions[2],
     },
     {
-      path: "../assets/caçamig.jpg",
-      caption:
-        "Cópia de fotografia de um caça Mig29 feita com papel vegetal, caneta nanquim e régua",
+      path: new URL("../assets/caçamig.jpg", import.meta.url).href,
+      caption: captions[3],
     },
   ],
   trads: [
     {
-      path: "../assets/Girassol.jpg",
-      caption:
-        "Ao invés de apenas desenhar um girassol, pensei que seria interessante imitar um quadro também",
+      path: new URL("../assets/Girassol.jpg", import.meta.url).href,
+      caption: captions[4],
     },
-    { path: "../assets/draw2.jpg" },
-    { path: "../assets/draw3.png" },
-    { path: "../assets/draw8.png" },
-    { path: "../assets/girl2.png" },
-    { path: "../assets/drawpaola.png" },
-    { path: "../assets/rain.png" },
-    { path: "../assets/lightshot_1585342830.jpeg" },
-    { path: "../assets/lightshot_1585340065.jpeg", caption: "Personagem imaginada para uma história minha que ainda não foi para o papel"  },
-    { path: "../assets/lightshot_1585339944.jpeg"},
-    { path: "../assets/lightshot_1585339318.jpeg" },
-    { path: "../assets/char.jpg" },
-    { path: "../assets/dancarina.jpeg", caption: "um solitário trabalho com lápis, caneta nanquim e lápis de cor" },
-    { path: "../assets/treino 001.jpg", caption: "Primeira e por enquanto única tentativa de ilustrar algo com giz de cera" },
+    { path: new URL("../assets/draw2.jpg", import.meta.url).href },
+    { path: new URL("../assets/draw3.png", import.meta.url).href },
+    { path: new URL("../assets/draw8.png", import.meta.url).href },
+    { path: new URL("../assets/girl2.png", import.meta.url).href },
+    { path: new URL("../assets/drawpaola.png", import.meta.url).href },
+    { path: new URL("../assets/rain.png", import.meta.url).href },
+    {
+      path: new URL("../assets/lightshot_1585342830.jpeg", import.meta.url)
+        .href,
+    },
+    {
+      path: new URL("../assets/lightshot_1585340065.jpeg", import.meta.url)
+        .href,
+      caption: captions[5],
+    },
+    {
+      path: new URL("../assets/lightshot_1585339944.jpeg", import.meta.url)
+        .href,
+    },
+    {
+      path: new URL("../assets/lightshot_1585339318.jpeg", import.meta.url)
+        .href,
+    },
+    { path: new URL("../assets/char.jpg", import.meta.url).href },
+    {
+      path: new URL("../assets/dancarina.jpeg", import.meta.url).href,
+      caption: captions[6],
+    },
+    {
+      path: new URL("../assets/treino 001.jpg", import.meta.url).href,
+      caption: captions[7],
+    },
   ],
   digis: [
-    { path: "../assets/Stella.png", caption: "Desenhado a lápis mas colorido digitalmente, por isso está aqui" },
-    { path: "../assets/PaolaNY.jpg" },
-    { path: "../assets/Ayame.png", caption: "Retrabalho da personagem Ayame, originalmente criada por Bigorados" },
-    { path: "../assets/Muslim.jpg", caption: "Inspirado numa fotografia da National Geographic. Não ficou tão bonita quanto, mas um bom treino" },
-    { path: "../assets/New Canvas.png", caption: "De dia uma pessoa comum, de noite uma jogadora de rpg. Ilustrado para uma apresentação sobre tecnologia VR." },
-    { path: "../assets/ferraria.jpg", caption: "Desenho não usado para um projeto de jogo de tabuleiro com temática medieval" },
-    { path: "../assets/WTLD.jpg", caption: "Ilustração para o conto de natal 'When the lights are down' (Noveland)" },
-    { path: "../assets/Vanessa.jpg", caption: "Vanessa (The King of Fighters 2002)" },
-    { path: "../assets/Ciel.png", caption: "Ciel (Tsukihime remake style)" },
-    { path: "../assets/JackPark.jpg", caption: "Ilustração para Jack Park e o Mistério das Realidades Alternativas, web novel de Lupe Sano" },
-    { path: "../assets/akiha_chibi.jpg" },
-    { path: "../assets/rabisco8001_comparacao.png", caption: "Mensurando minha evolução, parte 1" },
-    { path: "../assets/draw9_comparacao.png", caption: "Mensurando minha evolução, parte 2" },
-    { path: "../assets/maid.jpg", caption: "'Nanyan?!'" },
-    { path: "../assets/summer_woman.jpg", caption: "9 de 10 especialistas afirmaram que se expor ao sol regularmente faz bem à saude. O décimo não foi encontrado, deve estar na praia" },
+    {
+      path: new URL("../assets/Stella.png", import.meta.url).href,
+      caption: captions[8],
+    },
+    { path: new URL("../assets/PaolaNY.jpg", import.meta.url).href },
+    {
+      path: new URL("../assets/Ayame.png", import.meta.url).href,
+      caption: captions[9],
+    },
+    {
+      path: new URL("../assets/Muslim.jpg", import.meta.url).href,
+      caption: captions[10],
+    },
+    {
+      path: new URL("../assets/New Canvas.png", import.meta.url).href,
+      caption: captions[11],
+    },
+    {
+      path: new URL("../assets/ferraria.jpg", import.meta.url).href,
+      caption: captions[12],
+    },
+    {
+      path: new URL("../assets/WTLD.jpg", import.meta.url).href,
+      caption: captions[13],
+    },
+    {
+      path: new URL("../assets/Vanessa.jpg", import.meta.url).href,
+      caption: "Vanessa (The King of Fighters 2002)",
+    },
+    {
+      path: new URL("../assets/Ciel.png", import.meta.url).href,
+      caption: "Ciel (Tsukihime/2021)",
+    },
+    {
+      path: new URL("../assets/JackPark.jpg", import.meta.url).href,
+      caption: captions[14],
+    },
+    { path: new URL("../assets/akiha_chibi.jpg", import.meta.url).href },
+    {
+      path: new URL("../assets/rabisco8001_comparacao.png", import.meta.url)
+        .href,
+      caption: captions[15],
+    },
+    {
+      path: new URL("../assets/draw9_comparacao.png", import.meta.url).href,
+      caption: captions[16],
+    },
+    {
+      path: new URL("../assets/maid.jpg", import.meta.url).href,
+      caption: "'Nanyan?!'",
+    },
+    {
+      path: new URL("../assets/summer_woman.jpg", import.meta.url).href,
+      caption: captions[17],
+    },
   ],
 };
 </script>
 
 <template>
-  <div id="myModal" class="modal" v-if="show == true">
-    <span class="close" @click="toggle">&times;</span>
-    <div class="modal-content">
-      <div class="mySlides">
-        <div class="numbertext">{{ index + 1 }} / {{ subject.length }}</div>
-        <img :src="image.path" />
-        <div v-if="subject[index].caption" class="caption-container">
-          <p id="caption">{{ subject[index].caption }}</p>
+  <transition name="fade" mode="out-in">
+    <div id="myModal" class="modal" v-if="show == true">
+      <span class="close" @click="toggle">&times;</span>
+      <div class="modal-content">
+        <div class="mySlides">
+          <div class="numbertext">{{ index + 1 }} / {{ subject.length }}</div>
+          <img :src="image.path" />
+          <div v-if="subject[index].caption" class="caption-container">
+            <p id="caption">{{ subject[index].caption }}</p>
+          </div>
         </div>
+
+        <a class="prev" @click="switchSlide(--index)">&#10094;</a>
+        <a class="next" @click="switchSlide(++index)">&#10095;</a>
       </div>
-
-      <a class="prev" @click="switchSlide(--index)">&#10094;</a>
-      <a class="next" @click="switchSlide(++index)">&#10095;</a>
     </div>
-  </div>
-
+  </transition>
   <ArtGroup>
-    <template #heading>Reproduções</template>
+    <template #heading>{{ title[0] }}</template>
     <div class="row" id="copies">
       <ul>
         <li
@@ -131,7 +193,7 @@ let files = {
     </div>
   </ArtGroup>
   <ArtGroup>
-    <template #heading>Papel + lápis, etc</template>
+    <template #heading>{{ title[1] }}</template>
     <div class="row">
       <ul>
         <li
@@ -145,7 +207,7 @@ let files = {
     </div>
   </ArtGroup>
   <ArtGroup>
-    <template #heading>Digitais (total ou parcial)</template>
+    <template #heading>{{ title[2] }}</template>
     <div class="row">
       <ul>
         <li
@@ -161,6 +223,19 @@ let files = {
 </template>
 
 <style scoped>
+.fade-enter-active {
+  transition: all 0.15s ease-out;
+}
+
+.fade-leave-active {
+  transition: all 0.15s ease-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
 .row {
   overflow: hidden;
 }
@@ -238,7 +313,7 @@ li img {
   text-decoration: none;
   cursor: pointer;
   transition: all 0.15s;
-  transform: scale(1.25);
+  transform: scale(1.1);
 }
 
 .mySlides {
